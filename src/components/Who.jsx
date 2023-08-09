@@ -79,6 +79,9 @@ const Button = styled.button`
 `;
 
 const Who = () => {
+  const redirectToGitHub = () => {
+    window.location.href = 'https://github.com/yash1539'; // Replace with your actual GitHub URL
+  };
   return (
     <Section>
       <Container>
@@ -102,7 +105,7 @@ const Who = () => {
             a creative group of designers and developers with a passion for the
             arts.
           </Desc>
-          <Button>See our works</Button>
+          <Button onClick={redirectToGitHub}>See our works</Button>
         </Right>
       </Container>
     </Section>
