@@ -3,6 +3,8 @@ import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
+import Learn from "./components/learn";
+import React,{useState,useEffect} from "react";
 
 const Container = styled.div`
   height: 100vh;
@@ -17,14 +19,23 @@ const Container = styled.div`
   }
 `;
 
+
 function App() {
+
+  const [comp, setComp] = useState(true)
+  useEffect(()=>{  console.log("comp",comp);
+},[comp])
+  const handleComp = (value) => {
+  setComp(value);
+};
   return (
-    <Container>
-      <Hero />
+    comp?<Container>
+      <Hero handleComp={handleComp} />
+     
       <Who />
       <Works />
       <Contact />
-    </Container>
+    </Container>: <Container><Learn handleComp={handleComp} /></Container>
   );
 }
 

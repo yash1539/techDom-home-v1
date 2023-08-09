@@ -1,8 +1,7 @@
-import React, { Suspense ,useState} from "react";
+
+
+import React from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 const Section = styled.div`
   height: 100vh;
@@ -45,13 +44,7 @@ const Left = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  font-size: 74px;
 
-  @media only screen and (max-width: 768px) {
-    text-align: center;
-  }
-`;
 
 const WhatWeDo = styled.div`
   display: flex;
@@ -88,13 +81,15 @@ const Desc2 = styled.p`
   }
 `;
 const P = styled.p`
+padding:2px
   font-size: 24px;
-  color: #787276;
+  color: #ffffff;
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;
   }
 `;
+
 
 const Button = styled.button`
   background-color: #da4ea2;
@@ -106,85 +101,33 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
-const LearnMoreComponent = styled.div`
-  background-color: white;
-  padding: 20px;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-`;
 
-const Right = styled.div`
-  flex: 3;
-  position: relative;
-  @media only screen and (max-width: 768px) {
-    flex: 1;
-    width: 100%;
-  }
-`;
 
-const Img = styled.img`
-  width: 800px;
-  height: 600px;
-  object-fit: contain;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  animation: animate 2s infinite ease alternate;
 
-  @media only screen and (max-width: 768px) {
-    width: 300px;
-    height: 300px;
-  }
 
-  @keyframes animate {
-    to {
-      transform: translateY(20px);
-    }
-  }
-`;
 
-const Hero = ({handleComp}) => {
 
-  const [showLearnMore, setShowLearnMore] = useState(false);
+const Learn = ({handleComp}) => {
 
-  const handleLearnMoreClick = () => {
-    setShowLearnMore(true);
-  };
 
-  const handleCloseClick = () => {
-    setShowLearnMore(false);
-  };
   return (
     <Section>
-      <Navbar />
       <Container>
+
+
         <Left>
-          <Title>TechDom Solution</Title>
-          <Desc2>
-Elevating excellence across all domain: Your partner in comprehensive technical solution          </Desc2>
+        <Button onClick={()=>handleComp(true)}>Close</Button>
+
+         
+          
           <WhatWeDo>
             <Line src="./img/line.png" />
             <Subtitle>What we Do</Subtitle>
           </WhatWeDo>
-          <Desc>
-          From React to Java, Angular to Node, Vue to Next, and all the way to blockchain, our proficiency covers an expansive spectrum of technologies that drive the modern IT world. Our seasoned team of developers possesses a deep understanding of these frameworks and languages, enabling us to craft tailor-made solutions that align with your unique business needs.
-          </Desc>
-          <Flex>
+          <P>
 
-          <Button onClick={()=>handleComp(false)}>Learn More</Button>
-        {showLearnMore && (
-          <LearnMoreComponent>
-            <P>
-
-<P>Why Choose TechDom Solutions?</P>
-{/* <br/>
+<Desc2>Why Choose TechDom Solutions?</Desc2>
+<br/>
 
 <P>Comprehensive Skillset: Our team comprises proficient developers adept in a wide array of technologies, ensuring that every facet of your project is expertly handled.</P>
 <br/>
@@ -221,35 +164,18 @@ Elevating excellence across all domain: Your partner in comprehensive technical 
 
 <P>IT Consultation: Our experts provide strategic guidance, helping you make informed decisions to drive digital transformation.</P>
 
-<P>In the ever-evolving landscape of IT services, TechDom Solutions stands as your steadfast partner, guiding you towards digital excellence. Let us embark on a journey of innovation together, revolutionizing the way you experience technology..</P> */}
+<P>In the ever-evolving landscape of IT services, TechDom Solutions stands as your steadfast partner, guiding you towards digital excellence. Let us embark on a journey of innovation together, revolutionizing the way you experience technology..</P>
 </P>
-            <Button onClick={handleCloseClick}>Close</Button>
-          </LearnMoreComponent>
+          <Flex>
+
+         
           
-        )}        
         </Flex>
         </Left>
-        <Right>
-          <Canvas>
-            <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
-              <ambientLight intensity={1} />
-              <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.4}>
-                <MeshDistortMaterial
-                  color="#3d1c56"
-                  attach="material"
-                  distort={0.5}
-                  speed={2}
-                />
-              </Sphere>
-            </Suspense>
-          </Canvas>
-          <Img src="./img/moon.png" />
-        </Right>
+       
       </Container>
     </Section>
   );
 };
 
-export default Hero;
+export default Learn;

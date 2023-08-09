@@ -41,7 +41,7 @@ const Map = () => {
         }}
       >
         <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
-          {"India"}
+          {"Paris"}
         </text>
       </Annotation>
       <Annotation
@@ -55,7 +55,7 @@ const Map = () => {
         }}
       >
         <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
-          {"USA"}
+          {"Warsaw"}
         </text>
       </Annotation>
     </ComposableMap>

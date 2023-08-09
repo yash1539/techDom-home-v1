@@ -93,15 +93,16 @@ const Who = () => {
           </Canvas>
         </Left>
         <Right>
-          <Title>Breaking Boundaries Beyond the Pixels</Title>
+          <Title>Think outside the square space</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>ABOUT US</Subtitle>
+            <Subtitle>Who we Are</Subtitle>
           </WhatWeDo>
           <Desc>
-          We are a visionary coalition of designers and developers, ignited by an unwavering enthusiasm for creative expression and cutting-edge innovation. Rooted in our web and app development services, our startup is committed to reshaping digital landscapes and transcending traditional boundaries. Our mission is to pioneer new possibilities in technology, infusing every project with the latest advancements and pushing the envelope of what's achievable
+            a creative group of designers and developers with a passion for the
+            arts.
           </Desc>
-          <Button href='https://github.com/yash1539'>See our works</Button>
+          <Button>See our works</Button>
         </Right>
       </Container>
     </Section>
